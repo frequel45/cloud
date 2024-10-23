@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+
+<div class="form-container">
+    <form id="surveyForm" onsubmit="return handleSubmit(event)">
+        <h2>Survey Form</h2>
+
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+            <option value="" disabled selected>Select your country</option>
+            <option value="India">India</option>
+            <option value="PAK">Pakistan</option>
+            <option value="Canada">Canada</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="BAN">Bangladesh</option>
+            <option value="SA">South Africa</option>
+            <option value="NEP">Nepal</option>
+            <option value="SL">Srilanka</option>
+            <option value="CHINA">China</option>
+            <option value="JAPAN">Japan</option>
+            <option value="ZIM">Zimbabwe</option>
+            <option value="NK">North Korea</option>
+            <option value="SK">South Korea</option>
+            <option value="OMAN">Oman</option>
+            <option value="UAE">UAE</option>
+        </select>
+
+        <label>Gender</label>
+        <div class="radio-group">
+            <label><input type="radio" name="gender" value="Male" required> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other" required> Other</label>
+        </div>
+
+        <label for="profession">Profession</label>
+        <input type="text" id="profession" name="profession" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+
+        <div class="button-group">
+            <button type="submit">Submit</button>
+            <button type="button" onclick="resetForm()">Reset</button>
+        </div>
+    </form>
+</div>
+
+
+  <div id="popupModal" class="modal">
+      <div class="modal-content">
+          <span class="close-btn" onclick="closePopup()">&times;</span>
+          <h3>Survey Data</h3>
+          <p id="surveyData"></p>
+      </div>
+  </div>
+
+<script src="survey.js"></script>
+</body>
+</html>
